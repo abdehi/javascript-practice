@@ -73,14 +73,15 @@ const fruits = ["Apple", "Orange", "Pear"];
 
 let films = [];
 
-function Film(title, releaseDate, genre) {
-  this.title = title;
-  this.releaseDate = releaseDate;
-  this.genre = genre;
+function createFilm(title, releaseDate, genre) {
+  let film = {};
+  film.title = title;
+  film.releaseDate = releaseDate;
+  film.genre = genre;
+  return film;
 }
-
-let film1 = new Film("THE Last Of us", "2023", "Action");
-let film2 = new Film("Kingsman", "2019", "Action");
+let film1 = createFilm("THE Last Of us", "2023", "Action");
+let film2 = createFilm("Kingsman", "2019", "Action");
 
 films.push(film1);
 films.push(film2);
@@ -96,7 +97,7 @@ let newTitle = prompt("Enter the title of the new film:");
 let newReleaseDate = prompt("Enter the release date of the new film:");
 let newGenre = prompt("Enter the genre of the new film:");
 
-let newFilm = new Film(newTitle, newReleaseDate, newGenre);
+let newFilm = createFilm(newTitle, newReleaseDate, newGenre);
 films.push(newFilm);
 
 console.log("List Film after adding new Film : ");
